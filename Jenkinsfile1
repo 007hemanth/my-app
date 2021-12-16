@@ -1,0 +1,10 @@
+node{
+  stage('SCM Checkout'){
+   git 'https://github.com/007hemanth/my-app'
+  }
+  stage ('Complie-Package'){
+    def mvnHom= tool name: 'MAVEN_HOME', type: 'maven'
+    sh "${mvnHome}/bin/mvn package"
+    
+  }
+}
